@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+
+<section class="hero position-relative text-white text-center py-5" style="background: linear-gradient(to right, #007bff, #6610f2);">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to The Open Journal</h1>
+        <p class="lead">A space where stories unfold, ideas thrive, and creativity knows no limits.</p>
+        <a href="/compose" class="btn btn-light btn-lg fw-bold shadow">Create a Post</a>
+    </div>
+</section>
+
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Latest Posts</h1>
+    <p class="text-center text-muted"><%= startingContent %></p>
+
+    <div class="row">
+        <% posts.forEach(function(post) { %>
+            <div class="col-md-6 col-lg-4">
+                <div class="card post-card mb-4 border-0 rounded-3 overflow-hidden">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary fw-bold"><%= post.title %></h2>
+                        <p class="card-text text-muted"><%= post.content.substring(0, 120) + "..." %></p>
+                        <a href="/posts/<%= encodeURIComponent(post.title) %>" class="btn btn-outline-primary btn-sm fw-bold">Read More</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Compose New Post</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="/compose" method="post" class="shadow p-4 bg-light rounded position-relative">
+                
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" onclick="window.location.href='/'"></button>
+                
+                <div class="mb-3">
+                    <label for="postTitle" class="form-label">Title</label>
+                    <input type="text" id="postTitle" name="postTitle" class="form-control" placeholder="Enter post title" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="postBody" class="form-label">Post Content</label>
+                    <textarea id="postBody" name="postBody" class="form-control" rows="6" placeholder="Write your post here..." required></textarea>
+                </div>
+                
+                <button class="btn btn-primary w-100" type="submit">Publish</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer"); -%>
