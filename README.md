@@ -14,4 +14,3 @@ Contact Page: Users can submit messages via a contact form.
 
 Navigation: Includes Home, About, and Contact pages.
 
-Installation
